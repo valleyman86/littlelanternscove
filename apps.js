@@ -3,8 +3,8 @@ const APPS = [
     name: "Lantern Logic",
     subtitle: "Pattern puzzles and matching adventures",
     ageBand: "Ages 5+",
-    status: "Live now",
-    appStoreUrl: "https://apps.apple.com/us/app/id0000000000"
+    status: "Coming soon",
+    appStoreUrl: ""
   },
   {
     name: "Tiny Trail Numbers",
@@ -66,7 +66,7 @@ const appGrid = document.getElementById("app-grid");
 if (appGrid) {
   if (APPS.length === 0) {
     const empty = document.createElement("p");
-    empty.textContent = "Add your apps in apps.js.";
+    empty.textContent = "New titles are on the way.";
     appGrid.appendChild(empty);
   } else {
     APPS.forEach((app, index) => appGrid.appendChild(createAppCard(app, index)));
