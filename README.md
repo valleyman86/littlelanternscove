@@ -42,7 +42,7 @@ Then open `http://localhost:8080`.
 5. Save.
 6. Add your DNS records for `littlelanternscove.com` to point to GitHub Pages.
 
-`CNAME` file is included and already set to `littlelanternscove.com`.
+Add a `CNAME` file only when your custom domain DNS is ready.
 
 ## Deploy: FTP
 
@@ -52,6 +52,6 @@ Upload these files to your web root:
 - `privacy.html`
 - `styles.css`
 - `apps.js`
-- `CNAME` (optional for non-GitHub hosts)
+- `CNAME` (only if you are using a custom domain)
 
 No server-side setup is required.
