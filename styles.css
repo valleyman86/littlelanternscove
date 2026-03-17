@@ -1,0 +1,339 @@
+:root {
+  --bg: #fffaf2;
+  --ink: #17324d;
+  --ink-soft: #31567a;
+  --sun: #ffd36e;
+  --coral: #ff8d6b;
+  --mint: #8edec6;
+  --sky: #8ac8ff;
+  --card: #ffffff;
+  --line: rgba(23, 50, 77, 0.12);
+  --shadow: 0 14px 40px rgba(23, 50, 77, 0.14);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Nunito", "Avenir Next", "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 10%, #fff2cb 0%, transparent 38%),
+    radial-gradient(circle at 80% 0%, #dff0ff 0%, transparent 30%),
+    linear-gradient(180deg, #fffefb 0%, #fff8ec 100%);
+  position: relative;
+}
+
+.background-shape {
+  position: fixed;
+  z-index: -1;
+  border-radius: 999px;
+  opacity: 0.55;
+  filter: blur(5px);
+}
+
+.shape-one {
+  width: 280px;
+  height: 280px;
+  top: 14vh;
+  right: -80px;
+  background: linear-gradient(140deg, var(--sun), var(--coral));
+}
+
+.shape-two {
+  width: 240px;
+  height: 240px;
+  left: -90px;
+  bottom: 10vh;
+  background: linear-gradient(150deg, var(--mint), var(--sky));
+}
+
+.site-header,
+main,
+.site-footer {
+  width: min(1080px, 92vw);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 0 0.8rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--ink);
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: inline-block;
+  font-size: 1.3em;
+  transform: rotate(-7deg);
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: #ffffffa8;
+}
+
+main {
+  padding: 1rem 0 3rem;
+}
+
+.hero {
+  margin-top: 1rem;
+  padding: clamp(1.4rem, 4vw, 2.4rem);
+  border: 1px solid var(--line);
+  border-radius: 1.6rem;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 246, 229, 0.86)
+  );
+  box-shadow: var(--shadow);
+  animation: rise-in 500ms ease-out both;
+}
+
+.hero-kicker {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  background: #ffe5a6;
+  font-weight: 800;
+  color: #6f3b0a;
+  letter-spacing: 0.01em;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  max-width: 16ch;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+.hero-copy {
+  max-width: 56ch;
+  font-size: clamp(1rem, 1.5vw, 1.14rem);
+  color: var(--ink-soft);
+}
+
+.hero-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 0.9rem;
+  padding: 0.7rem 1.05rem;
+}
+
+.button-primary {
+  background: linear-gradient(130deg, #ff9447, #ff6f5b);
+  color: #fffef6;
+  box-shadow: 0 8px 18px rgba(255, 111, 91, 0.35);
+}
+
+.button-secondary {
+  background: #ffffffc7;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.apps-section,
+.about-section {
+  margin-top: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.app-grid {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.app-card {
+  border: 1px solid var(--line);
+  border-radius: 1.15rem;
+  padding: 1rem;
+  background: var(--card);
+  box-shadow: 0 8px 24px rgba(23, 50, 77, 0.08);
+  transform: translateY(14px);
+  opacity: 0;
+  animation: rise-in 520ms ease-out forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+.app-card h3 {
+  margin-bottom: 0.3rem;
+}
+
+.app-subtitle {
+  margin: 0 0 0.75rem;
+  color: var(--ink-soft);
+}
+
+.app-meta {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.24rem 0.6rem;
+  border-radius: 999px;
+  background: #ecf7ff;
+  color: #0f4c7e;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.app-card .button {
+  width: 100%;
+  text-align: center;
+}
+
+.button-disabled {
+  background: #edf1f7;
+  color: #5d6f83;
+  border: 1px solid #d8e1eb;
+  cursor: default;
+}
+
+.feature-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature-card {
+  padding: 1rem;
+  border-radius: 1.1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.site-footer {
+  margin-top: 1.2rem;
+  padding-bottom: 2.4rem;
+  font-size: 0.95rem;
+}
+
+.site-footer p {
+  margin: 0.45rem 0;
+}
+
+.site-footer a {
+  color: #1552a8;
+}
+
+.policy-page {
+  width: min(820px, 92vw);
+  margin: 2rem auto 3rem;
+}
+
+.policy-card {
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  background: #fffbf4;
+}
+
+.policy-card h2 {
+  margin-top: 1rem;
+}
+
+.policy-card p,
+.policy-card li {
+  color: var(--ink-soft);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 740px) {
+  .site-header {
+    gap: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
