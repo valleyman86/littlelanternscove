@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e4f86" />
+      <stop offset="100%" stop-color="#12335a" />
+    </linearGradient>
+    <linearGradient id="lantern" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd466" />
+      <stop offset="100%" stop-color="#f3a82e" />
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="url(#bg)" />
+  <path
+    d="M0 46c8-4 12 2 20-1s12-6 20-3 13 6 24 1v21H0z"
+    fill="#2f8aa4"
+    opacity="0.9"
+  />
+
+  <rect x="26" y="12" width="12" height="4" rx="2" fill="#f4d57a" />
+  <path
+    d="M24 20c0-6 16-6 16 0"
+    fill="none"
+    stroke="#f4d57a"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  <rect x="21" y="20" width="22" height="24" rx="7" fill="url(#lantern)" />
+  <rect x="25" y="24" width="14" height="16" rx="4" fill="#fff4c4" opacity="0.55" />
+  <rect x="29" y="44" width="6" height="8" rx="2" fill="#f3a82e" />
+</svg>
