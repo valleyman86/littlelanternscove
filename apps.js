@@ -1,23 +1,21 @@
 const APPS = [
   {
-    name: "Cave Dweller",
-    emoji: "🪨",
-    subtitle: "A puzzle-solving cave adventure built around logic and discovery.",
-    ageBand: "Puzzle Game",
-    status: "Released",
-    appStoreUrl: "https://apps.apple.com/us/search?term=Cave%20Dweller",
-    buttonText: "Search on App Store",
-    note: "Official direct App Store listing link will be added here."
-  },
-  {
     name: "Baby Bracket",
     emoji: "🏆",
     subtitle: "A parent-friendly bracket builder for leagues and family events.",
     ageBand: "Parents",
-    status: "Live now",
-    appStoreUrl: "https://apps.apple.com/us/app/bracket-baby/id6758258444",
-    buttonText: "View on App Store",
-    note: "Listed on the App Store as Bracket Baby."
+    status: "Coming soon",
+    appStoreUrl: "",
+    note: "Launching soon on the App Store."
+  },
+  {
+    name: "Cave Dweller",
+    emoji: "🪨",
+    subtitle: "A puzzle-solving cave adventure built around logic and discovery.",
+    ageBand: "Puzzle Game",
+    status: "Coming soon",
+    appStoreUrl: "",
+    note: "Launching soon on the App Store."
   }
 ];
 
