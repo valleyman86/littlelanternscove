@@ -25,7 +25,7 @@ const APPS = [
     ageBand: "Expecting Parents",
     status: "Coming soon",
     appStoreUrl: "",
-    note: "No sports brain required. Just tap your favorite each round and watch one winning name rise to the top."
+    note: "Simple by design: tap your favorite each round and watch one winning name rise to the top."
   },
   {
     name: "Cave Dweller",
