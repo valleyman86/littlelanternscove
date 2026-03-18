@@ -420,7 +420,12 @@ h3 {
 }
 
 .app-card .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  min-height: 2.8rem;
+  line-height: 1.2;
   text-align: center;
   margin-top: auto;
 }
