@@ -208,6 +208,8 @@ h3 {
 }
 
 .app-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--line);
   border-radius: 1.15rem;
   padding: 1rem;
@@ -407,6 +409,7 @@ h3 {
 .app-card .button {
   width: 100%;
   text-align: center;
+  margin-top: auto;
 }
 
 .button-disabled {
