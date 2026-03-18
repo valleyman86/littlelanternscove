@@ -21,11 +21,11 @@ const APPS = [
         iconSrc: "assets/apps/baby-bracket-boy.png"
       }
     ],
-    subtitle: "A baby name app with a single bracket and four name choices per match.",
+    subtitle: "Stuck on baby names? Turn the process into a playful picker that makes choosing feel easy.",
     ageBand: "Expecting Parents",
     status: "Coming soon",
     appStoreUrl: "",
-    note: "Pick one name each round and move your favorites forward to the final decision."
+    note: "No sports brain required. Just tap your favorite each round and watch one winning name rise to the top."
   },
   {
     name: "Cave Dweller",
