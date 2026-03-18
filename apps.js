@@ -2,21 +2,27 @@ const APPS = [
   {
     name: "Baby Bracket",
     iconSrc: "assets/apps/baby-bracket-icon-320.png",
-    mediaSrc: "assets/apps/baby-bracket-screen-420.png",
+    mediaSrc: "assets/apps/baby-bracket-screen-wide.jpg",
     mediaAlt: "Baby Bracket app preview screen",
-    mediaFit: "contain",
+    mediaFit: "cover",
+    mediaPosition: "50% 58%",
+    mediaTheme: "baby",
     subtitle: "A parent-friendly bracket builder for leagues and family events.",
     ageBand: "Parents",
     status: "Coming soon",
     appStoreUrl: "",
-    note: "Launching soon on the App Store."
+    note: "Launching soon on the App Store. Gender-neutral mode is now green in the latest build."
   },
   {
     name: "Cave Dweller",
     iconSrc: "assets/apps/cave-dweller-icon.png",
-    mediaSrc: "assets/apps/cave-dweller-title.png",
-    mediaAlt: "Cave Dweller title art",
-    mediaFit: "contain",
+    mediaSrc: "assets/apps/cave-dweller-background.png",
+    mediaAlt: "Cave Dweller cave background",
+    mediaFit: "cover",
+    mediaPosition: "50% 30%",
+    mediaTheme: "cave",
+    mediaOverlaySrc: "assets/apps/cave-dweller-title.png",
+    mediaOverlayAlt: "Cave Dweller logo",
     subtitle: "A puzzle-solving cave adventure built around logic and discovery.",
     ageBand: "Puzzle Game",
     status: "Coming soon",
@@ -32,6 +38,12 @@ function createAppCard(app, index) {
 
   const media = document.createElement("div");
   media.className = "app-media";
+  if (app.mediaTheme) {
+    media.classList.add(`app-media-${app.mediaTheme}`);
+  }
+  if (app.mediaPosition) {
+    media.style.setProperty("--media-position", app.mediaPosition);
+  }
   if (app.mediaSrc) {
     const mediaImage = document.createElement("img");
     mediaImage.className = "app-media-image";
@@ -43,6 +55,15 @@ function createAppCard(app, index) {
     mediaImage.loading = "lazy";
     mediaImage.decoding = "async";
     media.appendChild(mediaImage);
+  }
+  if (app.mediaOverlaySrc) {
+    const mediaOverlay = document.createElement("img");
+    mediaOverlay.className = "app-media-overlay";
+    mediaOverlay.src = app.mediaOverlaySrc;
+    mediaOverlay.alt = app.mediaOverlayAlt || "";
+    mediaOverlay.loading = "lazy";
+    mediaOverlay.decoding = "async";
+    media.appendChild(mediaOverlay);
   }
 
   const title = document.createElement("h3");
