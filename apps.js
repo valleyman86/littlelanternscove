@@ -21,11 +21,11 @@ const APPS = [
         iconSrc: "assets/apps/baby-bracket-boy.png"
       }
     ],
-    subtitle: "A baby name tool that runs tournament-style brackets between name choices.",
+    subtitle: "A baby name app with a single bracket and four name choices per match.",
     ageBand: "Expecting Parents",
     status: "Coming soon",
     appStoreUrl: "",
-    note: "Start with four names, pick winners each round, and advance to a final name. Gender-neutral mode is now green."
+    note: "Pick one name each round and move your favorites forward to the final decision."
   },
   {
     name: "Cave Dweller",
