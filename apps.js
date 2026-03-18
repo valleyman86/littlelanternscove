@@ -7,11 +7,11 @@ const APPS = [
     mediaFit: "cover",
     mediaPosition: "50% 58%",
     mediaTheme: "baby",
-    subtitle: "A parent-friendly bracket builder for leagues and family events.",
-    ageBand: "Parents",
+    subtitle: "A baby name tool that runs tournament-style brackets between name choices.",
+    ageBand: "Expecting Parents",
     status: "Coming soon",
     appStoreUrl: "",
-    note: "Launching soon on the App Store. Gender-neutral mode is now green in the latest build."
+    note: "Start with four names, pick winners each round, and advance to a final name. Gender-neutral mode is now green."
   },
   {
     name: "Cave Dweller",
