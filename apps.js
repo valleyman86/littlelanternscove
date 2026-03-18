@@ -1,7 +1,10 @@
 const APPS = [
   {
     name: "Baby Bracket",
-    emoji: "🏆",
+    iconSrc: "assets/apps/baby-bracket-icon-320.png",
+    mediaSrc: "assets/apps/baby-bracket-screen-420.png",
+    mediaAlt: "Baby Bracket app preview screen",
+    mediaFit: "contain",
     subtitle: "A parent-friendly bracket builder for leagues and family events.",
     ageBand: "Parents",
     status: "Coming soon",
@@ -10,7 +13,10 @@ const APPS = [
   },
   {
     name: "Cave Dweller",
-    emoji: "🪨",
+    iconSrc: "assets/apps/cave-dweller-icon.png",
+    mediaSrc: "assets/apps/cave-dweller-title.png",
+    mediaAlt: "Cave Dweller title art",
+    mediaFit: "contain",
     subtitle: "A puzzle-solving cave adventure built around logic and discovery.",
     ageBand: "Puzzle Game",
     status: "Coming soon",
@@ -24,6 +30,21 @@ function createAppCard(app, index) {
   card.className = "app-card";
   card.style.setProperty("--delay", `${index * 90}ms`);
 
+  const media = document.createElement("div");
+  media.className = "app-media";
+  if (app.mediaSrc) {
+    const mediaImage = document.createElement("img");
+    mediaImage.className = "app-media-image";
+    if (app.mediaFit === "contain") {
+      mediaImage.classList.add("app-media-contain");
+    }
+    mediaImage.src = app.mediaSrc;
+    mediaImage.alt = app.mediaAlt || `${app.name} preview`;
+    mediaImage.loading = "lazy";
+    mediaImage.decoding = "async";
+    media.appendChild(mediaImage);
+  }
+
   const title = document.createElement("h3");
   title.textContent = app.name;
   const titleRow = document.createElement("div");
@@ -32,7 +53,17 @@ function createAppCard(app, index) {
   const icon = document.createElement("span");
   icon.className = "app-icon";
   icon.setAttribute("aria-hidden", "true");
-  icon.textContent = app.emoji || "🏮";
+  if (app.iconSrc) {
+    const iconImage = document.createElement("img");
+    iconImage.src = app.iconSrc;
+    iconImage.alt = "";
+    iconImage.className = "app-icon-image";
+    iconImage.loading = "lazy";
+    iconImage.decoding = "async";
+    icon.appendChild(iconImage);
+  } else {
+    icon.textContent = app.emoji || "🏮";
+  }
   titleRow.append(icon, title);
 
   const subtitle = document.createElement("p");
@@ -63,11 +94,14 @@ function createAppCard(app, index) {
     cta.ariaDisabled = "true";
   }
 
-  const note = document.createElement("p");
-  note.className = "app-note";
-  note.textContent = app.note || "";
-
-  card.append(titleRow, subtitle, meta, note, cta);
+  card.append(media, titleRow, subtitle, meta);
+  if (app.note) {
+    const note = document.createElement("p");
+    note.className = "app-note";
+    note.textContent = app.note;
+    card.appendChild(note);
+  }
+  card.appendChild(cta);
   return card;
 }
 
