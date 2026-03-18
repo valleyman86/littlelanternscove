@@ -288,6 +288,70 @@ h3 {
   pointer-events: none;
 }
 
+.app-media-baby-board {
+  background: #f8f5ef;
+}
+
+.baby-board {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: 100%;
+}
+
+.baby-lane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.3rem;
+  background-image: url("assets/apps/baby-bracket-dots.png");
+  background-size: 19px 19px;
+  background-repeat: repeat;
+  text-align: center;
+}
+
+.baby-lane + .baby-lane {
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.08);
+}
+
+.baby-lane-girl {
+  background-color: #ff6f86;
+}
+
+.baby-lane-neutral {
+  background-color: #8bc478;
+}
+
+.baby-lane-boy {
+  background-color: #56bfea;
+}
+
+.baby-lane-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.22));
+}
+
+.baby-lane-icon-neutral {
+  width: 56px;
+  height: 56px;
+  filter:
+    brightness(0) saturate(100%) invert(74%) sepia(74%) saturate(772%)
+    hue-rotate(355deg) brightness(104%) contrast(102%)
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.22));
+}
+
+.baby-lane-label {
+  margin: 0;
+  color: #fff;
+  font-family: "Fredoka", "Trebuchet MS", sans-serif;
+  font-size: clamp(0.72rem, 1.5vw, 0.94rem);
+  line-height: 1.05;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
 .app-title-row {
   display: flex;
   align-items: center;

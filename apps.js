@@ -2,11 +2,25 @@ const APPS = [
   {
     name: "Baby Bracket",
     iconSrc: "assets/apps/baby-bracket-icon-320.png",
-    mediaSrc: "assets/apps/baby-bracket-screen-wide.jpg",
-    mediaAlt: "Baby Bracket app preview screen",
-    mediaFit: "cover",
-    mediaPosition: "50% 58%",
-    mediaTheme: "baby",
+    mediaTheme: "baby-board",
+    mediaLayout: "babyBracketBoard",
+    mediaItems: [
+      {
+        tone: "girl",
+        label: "Baby Girl",
+        iconSrc: "assets/apps/baby-bracket-girl.png"
+      },
+      {
+        tone: "neutral",
+        label: "Baby (Unisex)",
+        iconSrc: "assets/apps/baby-bracket-neutral.png"
+      },
+      {
+        tone: "boy",
+        label: "Baby Boy",
+        iconSrc: "assets/apps/baby-bracket-boy.png"
+      }
+    ],
     subtitle: "A baby name tool that runs tournament-style brackets between name choices.",
     ageBand: "Expecting Parents",
     status: "Coming soon",
@@ -44,7 +58,33 @@ function createAppCard(app, index) {
   if (app.mediaPosition) {
     media.style.setProperty("--media-position", app.mediaPosition);
   }
-  if (app.mediaSrc) {
+
+  if (app.mediaLayout === "babyBracketBoard" && Array.isArray(app.mediaItems)) {
+    const board = document.createElement("div");
+    board.className = "baby-board";
+    app.mediaItems.forEach((item) => {
+      const lane = document.createElement("div");
+      lane.className = `baby-lane baby-lane-${item.tone || "default"}`;
+
+      const laneIcon = document.createElement("img");
+      laneIcon.className = "baby-lane-icon";
+      if (item.tone === "neutral") {
+        laneIcon.classList.add("baby-lane-icon-neutral");
+      }
+      laneIcon.src = item.iconSrc;
+      laneIcon.alt = "";
+      laneIcon.loading = "lazy";
+      laneIcon.decoding = "async";
+
+      const laneLabel = document.createElement("p");
+      laneLabel.className = "baby-lane-label";
+      laneLabel.textContent = item.label;
+
+      lane.append(laneIcon, laneLabel);
+      board.appendChild(lane);
+    });
+    media.appendChild(board);
+  } else if (app.mediaSrc) {
     const mediaImage = document.createElement("img");
     mediaImage.className = "app-media-image";
     if (app.mediaFit === "contain") {
