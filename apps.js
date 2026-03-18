@@ -21,11 +21,11 @@ const APPS = [
         iconSrc: "assets/apps/baby-bracket-boy.png"
       }
     ],
-    subtitle: "Need help choosing a baby name? Put your shortlist into simple rounds and let one winner emerge.",
-    ageBand: "Parent Tool",
+    subtitle: "Picking baby names can feel hard. This turns it into a simple game of choices.",
+    ageBand: "For Parents",
     status: "Coming soon",
     appStoreUrl: "",
-    note: "Add names, tap your favorite each round, and the app narrows to a final pick."
+    note: "Add your names, tap your favorite each round, and one name wins."
   },
   {
     name: "Cave Dweller",
@@ -37,11 +37,11 @@ const APPS = [
     mediaTheme: "cave",
     mediaOverlaySrc: "assets/apps/cave-dweller-title.png",
     mediaOverlayAlt: "Cave Dweller logo",
-    subtitle: "A cave-themed kid game in progress.",
-    ageBand: "Kid Game",
+    subtitle: "A kid-friendly cave adventure game we are building right now.",
+    ageBand: "For Kids",
     status: "Coming soon",
     appStoreUrl: "",
-    note: "Coming soon."
+    note: "Still in the workshop. Coming soon."
   }
 ];
 
