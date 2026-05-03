@@ -23,7 +23,7 @@ const APPS = [
     ],
     subtitle: "Picking baby names can feel hard. This turns it into a simple game of choices.",
     ageBand: "For Parents",
-    status: "Live now",
+    status: "",
     appStoreUrl: "https://apps.apple.com/us/app/baby-bracket/id6748067927",
     note: "Add your names, tap your favorite each round, and one name wins."
   },
@@ -136,10 +136,13 @@ function createAppCard(app, index) {
   const agePill = document.createElement("span");
   agePill.className = "pill";
   agePill.textContent = app.ageBand;
-  const statusPill = document.createElement("span");
-  statusPill.className = "pill";
-  statusPill.textContent = app.status;
-  meta.append(agePill, document.createTextNode(" "), statusPill);
+  meta.append(agePill);
+  if (app.status) {
+    const statusPill = document.createElement("span");
+    statusPill.className = "pill";
+    statusPill.textContent = app.status;
+    meta.append(document.createTextNode(" "), statusPill);
+  }
 
   const cta = document.createElement(app.appStoreUrl ? "a" : "span");
   cta.className = "button";
