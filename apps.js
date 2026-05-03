@@ -24,7 +24,7 @@ const APPS = [
     subtitle: "Picking baby names can feel hard. This turns it into a simple game of choices.",
     ageBand: "For Parents",
     status: "Coming soon",
-    appStoreUrl: "",
+    appStoreUrl: "https://apps.apple.com/us/app/baby-bracket/id6748067927",
     note: "Add your names, tap your favorite each round, and one name wins."
   },
   {
